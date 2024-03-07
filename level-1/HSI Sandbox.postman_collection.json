@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "34ae96e1-8283-4064-8d09-5f347581631f",
+		"name": "HSI Sandbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11742501",
+		"_collection_link": "https://winter-station-619187.postman.co/workspace/Sekolah~a77acd3d-d775-4df8-89f8-360e6cc39ec1/collection/11742501-34ae96e1-8283-4064-8d09-5f347581631f?action=share&source=collection_link&creator=11742501"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/book/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"book",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "developer",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "ihsan",
+									"disabled": true
+								},
+								{
+									"key": "from_year",
+									"value": "2022",
+									"disabled": true
+								},
+								{
+									"key": "to_year",
+									"value": "2023",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET detail by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/book/detail/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"book",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 16,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"admin\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REQ GAGAL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 10,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"student\"\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"user",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "REQ BERHASIL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 16,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"admin\"\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"user",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "POST BULK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\" : [\n    {\n         \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 16,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"admin\"\n    },\n    {\n         \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 16,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"admin\"\n    },\n    {\n        \"nama\" : \"ihsan\",\n    \"email\" : \"ihsanabuhanifah@gmail.com\",\n    \"umur\" : 16,\n    \"tanggal_lahir\" : \"2007-12-12\",\n    \"role\" : \"admin\"\n    }\n    \n]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/book/create/bulk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"book",
+								"create",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"NestJS update\",\n    \"author\" : \"Ihsan Update\",\n    \"year\" : 2023\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/book/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"book",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ihsan\",\n    \"age\" : 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/book/delete/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"book",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE MULTI",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delete\" : [1,2,3,4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/userdelete/bulk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"userdelete",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
